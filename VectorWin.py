@@ -37,6 +37,7 @@ class VectorWin(QMainWindow):
 
         uic.loadUi(resource_path("view.ui"), self)
         self.conn = False
+        self.speed=0
         self.rect_width = 105
         self.med = self.rect_width*sqrt(3)/2
         self.graphicsView = Viewha()
@@ -77,6 +78,7 @@ class VectorWin(QMainWindow):
 
     def setAnimationSpeed(self, value):
         if value != 0:
+            self.speed=value
             duration = 60000 / value
             self.animation.setDuration(int(duration))
             if not self.animation.state() =="Running":
@@ -88,7 +90,7 @@ class VectorWin(QMainWindow):
         if self.rect_width >= self.med:self.rect_width = 105
         self.vectora(angle,self.rect_width)
         if self.conn:
-            self.thread.setAngle(angle,self.rect_width/105)
+            self.thread.setAngle(angle,self.rect_width/105,self.speed)
 
     def serial_connect(self):
         if self.conBut.text() == "Connect":
@@ -148,7 +150,7 @@ class VectorWin(QMainWindow):
         self.vectora(angle,self.rect_width)
 
         if self.conn:
-            self.thread.setAngle(angle,self.rect_width/105)
+            self.thread.setAngle(angle,self.rect_width/105,0)
 
     def vectora(self,angle,u_vect):
 
