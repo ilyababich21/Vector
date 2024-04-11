@@ -2,17 +2,15 @@ import math
 import os
 import sys
 import threading
-
-import serial
 import serial.tools.list_ports as ser
 from PyQt6 import uic, QtGui
-from PyQt6.QtCore import Qt, QPropertyAnimation, QVariantAnimation, QSize
-from PyQt6.QtGui import QBrush, QPen, QPixmap, QColor
-from PyQt6.QtWidgets import QMainWindow, QGraphicsScene, QGraphicsRectItem, QGraphicsItem, QGraphicsView, QVBoxLayout, \
-    QHBoxLayout, QPushButton, QMessageBox
+from PyQt6.QtCore import QVariantAnimation, QSize
+from PyQt6.QtGui import QBrush, QPixmap, QColor
+from PyQt6.QtWidgets import QMainWindow, QGraphicsScene, QGraphicsRectItem, QGraphicsItem,  \
+    QHBoxLayout
 from serial import SerialException
 
-from Scene import Scene, Viewha
+from Scene import  Viewha
 from math import *
 
 
